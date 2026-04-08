@@ -15,6 +15,7 @@ export interface CartItem {
   name: string;
   price: number;
   category: string;
+  size: string;
   barcode: string;
   quantity: number;
 }

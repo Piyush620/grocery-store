@@ -7,7 +7,6 @@ import {
   getCart,
   removeItemFromCart,
   checkout,
-  clearCart,
 } from "./api";
 import { CartItem, Bill } from "./types";
 import "./App.css";

@@ -351,6 +351,7 @@ app.post("/cart/add-item", (req, res) => {
       name: product.name,
       price: product.price,
       category: product.category,
+      size: product.size,
       barcode: product.barcode,
       quantity: 1,
     });
