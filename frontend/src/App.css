@@ -1,0 +1,245 @@
+/* ============================================
+   POS SYSTEM - MAIN STYLING
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Main Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+/* Header */
+.app-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.cart-info {
+  font-size: 12px;
+  margin: 5px 0 0 0;
+  opacity: 0.9;
+}
+
+/* Main Layout */
+.main-layout {
+  display: flex;
+  flex: 1;
+  gap: 20px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Scanner Section (Left) */
+.scanner-section {
+  flex: 0 0 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+/* Scan Form */
+.scan-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.barcode-input {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.barcode-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.barcode-input:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+/* Buttons */
+.btn-scan,
+.btn-checkout,
+.btn-new-cart,
+.btn-remove {
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-scan {
+  background-color: #667eea;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+.btn-scan:hover:not(:disabled) {
+  background-color: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-scan:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Checkout Section */
+.checkout-section {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.btn-checkout {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.btn-checkout:hover:not(:disabled) {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.btn-checkout:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-new-cart {
+  background-color: #2196f3;
+  color: white;
+  padding: 10px 15px;
+}
+
+.btn-new-cart:hover:not(:disabled) {
+  background-color: #0b7dda;
+}
+
+.btn-new-cart:disabled {
+  background-color: #ccc;
+}
+
+/* Messages */
+.message {
+  padding: 12px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.message.error {
+  background-color: #fee;
+  color: #c33;
+  border-left: 4px solid #c33;
+}
+
+.message.success {
+  background-color: #efe;
+  color: #3c3;
+  border-left: 4px solid #3c3;
+}
+
+/* Last Bill Display */
+.last-bill {
+  background-color: #e8f5e9;
+  border: 2px solid #4caf50;
+  border-radius: 6px;
+  padding: 15px;
+  text-align: center;
+}
+
+.last-bill h3 {
+  color: #2e7d32;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.last-bill p {
+  color: #558b2f;
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+/* Cart Section (Right) */
+.cart-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  overflow: auto;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .main-layout {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .scanner-section {
+    flex: 0 0 auto;
+  }
+
+  .cart-section {
+    flex: 1;
+    min-height: 300px;
+  }
+}
+
