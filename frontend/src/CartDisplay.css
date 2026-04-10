@@ -6,21 +6,29 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 20px;
+  padding: 0;
 }
 
 .cart-container h2 {
   font-size: 18px;
-  color: #333;
-  margin-bottom: 15px;
-  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+  font-weight: 700;
+  padding: 20px 24px;
+  border-bottom: 2px solid #f1f5f9;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
 }
 
 .empty-cart {
   text-align: center;
-  color: #999;
-  padding: 40px 20px;
-  font-size: 14px;
+  color: #94a3b8;
+  padding: 60px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 
 .cart-items {
@@ -29,7 +37,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 20px;
+  padding: 16px;
 }
 
 /* Cart Item */
@@ -37,16 +45,19 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 15px;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+  padding: 14px;
+  background: #f8fafc;
+  border: none;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .cart-item:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-color: #667eea;
+  background: #f1f5f9;
+  box-shadow: 0 3px 8px rgba(59, 130, 246, 0.15);
+  transform: translateX(2px);
 }
 
 .item-details {
@@ -55,8 +66,8 @@
 }
 
 .item-name {
-  font-weight: 600;
-  color: #333;
+  font-weight: 700;
+  color: #0f172a;
   font-size: 14px;
   margin-bottom: 4px;
   white-space: nowrap;
@@ -66,21 +77,26 @@
 
 .item-meta {
   font-size: 12px;
-  color: #999;
+  color: #94a3b8;
 }
 
 .item-quantity {
-  text-align: center;
-  min-width: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 60px;
 }
 
 .qty {
-  background-color: #f0f0f0;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #333;
+  background: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  min-width: 40px;
+  text-align: center;
 }
 
 .item-price {
@@ -90,76 +106,89 @@
 
 .unit-price {
   font-size: 12px;
-  color: #999;
+  color: #94a3b8;
   margin-bottom: 2px;
 }
 
 .line-total {
-  font-weight: 600;
-  color: #667eea;
+  font-weight: 700;
+  color: #3b82f6;
   font-size: 14px;
 }
 
 /* Remove Button */
 .btn-remove {
-  background-color: #fff;
-  color: #f44336;
-  border: 1px solid #f44336;
-  width: 30px;
-  height: 30px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
   padding: 0;
-  font-size: 18px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  font-weight: 700;
 }
 
 .btn-remove:hover {
-  background-color: #f44336;
-  color: white;
+  background: #dc2626;
+  transform: scale(1.05);
+  box-shadow: 0 3px 8px rgba(239, 68, 68, 0.25);
 }
 
 /* Cart Summary */
 .cart-summary {
-  border-top: 2px solid #ddd;
-  padding-top: 15px;
-  background-color: #fafafa;
-  padding: 15px;
-  border-radius: 6px;
+  border-top: 2px solid #e2e8f0;
+  padding: 20px 24px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 0;
+  flex-shrink: 0;
 }
 
 .summary-row {
   display: flex;
   justify-content: space-between;
   font-size: 14px;
-  margin-bottom: 8px;
-  color: #333;
+  margin-bottom: 10px;
+  color: #334155;
+  font-weight: 600;
 }
 
 .summary-row.total {
   font-size: 18px;
-  font-weight: bold;
-  color: #667eea;
-  border-top: 1px solid #ddd;
-  padding-top: 10px;
-  margin-top: 10px;
+  font-weight: 700;
+  color: #0f172a;
+  border-top: 2px solid #e2e8f0;
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+.summary-row.total-amount {
+  color: #10b981;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 /* Scrollbar Styling */
 .cart-items::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 .cart-items::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f1f5f9;
   border-radius: 10px;
 }
 
 .cart-items::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #cbd5e1;
   border-radius: 10px;
 }
 
 .cart-items::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #94a3b8;
 }

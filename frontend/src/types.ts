@@ -33,3 +33,24 @@ export interface Bill {
   totalAmount: number;
   timestamp: string;
 }
+
+export interface Employee {
+  id: number;
+  name: string;
+  phone?: string;
+  email?: string;
+  position: string;
+  salary: number;
+  hire_date: string;
+  status: string;
+}
+
+export interface Attendance {
+  id: number;
+  employee_id: number;
+  employee_name: string;
+  check_in: string;
+  check_out?: string;
+  duration_minutes?: number;
+  date: string;
+}
